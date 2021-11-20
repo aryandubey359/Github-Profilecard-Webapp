@@ -1,0 +1,159 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: "Architects Daughter", cursive;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #05032e;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 70%;
+  background-color: #6962b6;
+}
+
+.userid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.input p{
+  font-size: 1.2rem;
+  opacity: 90%;
+}
+
+.input input {
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1rem;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.input button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+}
+
+.profile-container img {
+  border-radius: 50%;
+  height: 300px;
+  width: 450px;
+  box-shadow: 1rem;
+  margin: 1rem;
+  border: 1px solid black;
+}
+
+.profile-details {
+  line-height: 2rem;
+  font-size: 1.5rem;
+}
+
+.profile-details .name {
+  font-size: 1.6rem;
+  opacity: 110%;
+}
+
+.profile-details .name a {
+  font-size: 1.6rem;
+  opacity: 110%;
+  color: black;
+}
+
+.profile-details .company {
+  font-size: 1.3rem;
+  opacity: 80%;
+}
+
+.profile-details .bio {
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 110%;
+  font-size: 1.2rem;
+}
+
+.profile-details .follow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.profile-details #repo {
+  font-size: 1.2rem;
+  background: transparent;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-color: black;
+}
+
+.repo-container{
+  position:absolute;
+  background: #eee;
+  height: 500px;
+  width: 700px;
+  overflow: auto;
+}
+
+.repo-container.hidden{
+  display: none;
+}
+
+.repo-header{
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.close{
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+}
+
+.list{
+  /* display: flex; */
+  padding: 2rem;
+}
+
+.list p{
+  text-align: center;
+  width: 100%;
+  margin: 1rem;
+}
+
+.list p a{
+  text-decoration: none;
+  color: black;
+}
