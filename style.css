@@ -15,7 +15,8 @@ body {
 
 .profile-container {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  /* flex-direction: column; */
   justify-content: center;
   border: 2px solid black;
   padding: 2rem;
@@ -41,7 +42,7 @@ body {
   padding: 1rem;
 }
 
-.input p{
+.input p {
   font-size: 1.2rem;
   opacity: 90%;
 }
@@ -114,46 +115,51 @@ body {
   border-color: black;
 }
 
-.repo-container{
-  position:absolute;
-  background: #eee;
-  height: 500px;
-  width: 700px;
-  overflow: auto;
+.repos {
+  /* overflow: auto; */
+  margin-top: 2rem;
+  font-size: 0.8rem;
 }
 
-.repo-container.hidden{
-  display: none;
+.repos a {
+  border-radius: 10px;
+  background-color: #05032e;
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  padding: 0.2rem 0.3rem;
+  text-decoration: none;
+  color: white;
+  border: 1px solid black;
 }
 
-.repo-header{
+.another {
+  margin: 2rem;
   display: flex;
   align-items: center;
-  padding: 1rem;
   justify-content: center;
 }
 
-.close{
-  position: absolute;
-  background-color: transparent;
-  border: none;
-  font-size: 1.5rem;
-  right: 0.5rem;
-  cursor: pointer;
-}
-
-.list{
-  /* display: flex; */
-  padding: 2rem;
-}
-
-.list p{
-  text-align: center;
-  width: 100%;
-  margin: 1rem;
-}
-
-.list p a{
+.anothersearch{
   text-decoration: none;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
   color: black;
+  background-color: #eee;
+}
+
+@media screen and (max-width: 900px){
+  .profile-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid black;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 70%;
+    background-color: #6962b6;
+  }
 }

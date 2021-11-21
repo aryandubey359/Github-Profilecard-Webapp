@@ -11,6 +11,7 @@ async function getUserData(userid){
     const resp = await fetch(APIURL + userid);
     const respData = await resp.json();
     GITURL = GITURL + userid;
+    REPOURL = "https://github.com/";
     REPOURL = REPOURL + userid + "?tab=repositories";
     showData(respData);
     console.log(respData);
@@ -22,12 +23,14 @@ async function getUserRepoData(userid){
     userRepoData = repoRespData;
     console.log(repoRespData);
     console.log(userRepoData);
+    addRepos(userRepoData);
 }
 
 showButton.addEventListener("click", () => {
     userid = github_username.value;
     console.log(userid);
     getUserData(userid);
+    getUserRepoData(userid);
 })  
 
 function invalidUserData(){
@@ -35,6 +38,7 @@ function invalidUserData(){
     userid = github_username.value;
     console.log(userid);
     getUserData(userid);
+    getUserRepoData(userid);
 }
 
 
@@ -64,7 +68,25 @@ function showData(respData){
                 <span class="followers" id="followers">Followers: ${respData.followers}</span>
                 <span class="following" id="following">Following: ${respData.following}</span>
             </div>
+            <ul class="repos" id="repos"></ul>
+            <div class="another">
+                <a class="anothersearch" id="anothersearch" href="./index.html">Search for another User</a>
+            </div>    
         </div>    
     `
     }
+}
+
+function addRepos(userRepoData){
+    const reposEl = document.getElementById("repos");
+    userRepoData.forEach(repo => {
+        const repoEl = document.createElement('a');
+        repoEl.classList.add('repo');
+
+        repoEl.innerText = repo.name;
+        repoEl.href = repo.html_url;
+        repoEl.target = "_blank";
+        
+        reposEl.appendChild(repoEl);
+    });
 }
